@@ -34,10 +34,24 @@ public class Produto {
         this.preco = preco;
     }
 
-    public void adicionarEstoque(int quantidade)
+    public void adicionarEstoque(int quantidade){
+        quantidadeEstoque += quantidade;
+    }
+
+    public void removerEstoque(int quantidade) {
+        if (quantidadeEstoque >= quantidade) {
+            quantidadeEstoque -= quantidade;
+        } else {
+            System.out.println("Quantidade insuficiente em estoque.");
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Nome: " + nomeProduto + ", Código: " + codigo + ", Preço: R$" + preco + ", Quantidade em Estoque: " + quantidadeEstoque;
+    }
 
 
 
-
-
+    
 }
